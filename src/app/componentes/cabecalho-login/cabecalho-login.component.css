@@ -1,0 +1,24 @@
+.cabecalho {
+    align-items: center;
+    background-image: linear-gradient(to right, var(--cor-secundaria), var(--cor-principal));
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: auto;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.cabecalho h1 {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding-bottom: 1em;
+}
+
+.cabecalho img {
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+}
