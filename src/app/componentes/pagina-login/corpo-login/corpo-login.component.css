@@ -1,0 +1,98 @@
+.principal {
+    background-color: #F4F2FF;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.principal form {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+}
+
+.form__agrupamento {
+    box-sizing: border-box;
+    border: none;
+    text-align: center;
+}
+
+.form__agrupamento legend {
+    color: var(--cor-secundaria);
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: .2em;
+}
+
+.form__agrupamento label {
+    color: var(--cor-principal);
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form__agrupamento label[for="senha"] {
+    margin-top: 1.5em;
+}
+
+.form__agrupamento input {
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    padding: 1em;
+    width: 90%;
+}
+
+.form__agrupamento input:focus {
+    outline: auto var(--cor-primaria);
+}
+
+.form__agrupamento input::placeholder {
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    display: block;
+}
+
+.form__botoes button[type="submit"] {
+    background-image: linear-gradient(to right, var(--cor-secundaria), var(--cor-principal));
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    padding: 10px 2em;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1em auto 0;
+}
+
+#trocar-senha {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+    text-decoration: none;
+}
+
+#trocar-senha:hover, #criar-conta:hover {
+    text-decoration: underline;
+}
+
+#criar-conta {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-principal);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 1em auto 0;
+    text-decoration: none;
+}
