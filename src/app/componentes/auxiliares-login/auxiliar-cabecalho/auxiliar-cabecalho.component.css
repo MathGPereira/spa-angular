@@ -1,0 +1,30 @@
+.cabecalho {
+    align-items: center;
+    background-image: linear-gradient(to right, var(--cor-secundaria), var(--cor-principal));
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.cabecalho h1 {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.cabecalho button {
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0.5em;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+
+.cabecalho button:hover {
+    background-color: #FFFFFF;
+    color: #701414;
+    border-color: #701414;
+}
