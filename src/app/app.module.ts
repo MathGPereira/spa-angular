@@ -7,6 +7,7 @@ import { CabecalhoLoginComponent } from './componentes/pagina-login/cabecalho-lo
 import { CorpoLoginComponent } from './componentes/pagina-login/corpo-login/corpo-login.component';
 import { CriaContaComponent } from './componentes/auxiliares-login/cria-conta/cria-conta.component';
 import { TrocaSenhaComponent } from './componentes/auxiliares-login/troca-senha/troca-senha.component';
+import { LoginComponent } from './componentes/pagina-login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TrocaSenhaComponent } from './componentes/auxiliares-login/troca-senha/
     CabecalhoLoginComponent,
     CorpoLoginComponent,
     CriaContaComponent,
-    TrocaSenhaComponent
+    TrocaSenhaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
