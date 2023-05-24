@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabecalhoLoginComponent } from './componentes/pagina-login/cabecalho-login/cabecalho-login.component';
 import { CorpoLoginComponent } from './componentes/pagina-login/corpo-login/corpo-login.component';
+import { CriaContaComponent } from './componentes/auxiliares-login/cria-conta/cria-conta.component';
+import { TrocaSenhaComponent } from './componentes/auxiliares-login/troca-senha/troca-senha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoLoginComponent,
-    CorpoLoginComponent
+    CorpoLoginComponent,
+    CriaContaComponent,
+    TrocaSenhaComponent
   ],
   imports: [
     BrowserModule,
