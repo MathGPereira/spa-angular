@@ -1,1 +1,21 @@
 <app-auxiliar-cabecalho></app-auxiliar-cabecalho>
+<section class="principal" role="main">
+    <form action="#" method="POST" autocomplete="on" id="cadastro">
+        <fieldset form="cadastro" name="campos-cadastro" class="form__agrupamento">
+            <legend>Cadastro</legend>
+            <label for="nome" form="cadastro" accesskey="n" id="nome">Nome</label>
+            <input type="text" name="nome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Nome" tabindex="1" minlength="3" aria-labelledby="nome" required>
+            <label for="sobrenome" form="cadastro" accesskey="s" id="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Sobrenome" tabindex="2" minlength="2" aria-labelledby="sobrenome" required>
+            <label for="email" form="cadastro" accesskey="e" id="email">E-mail</label>
+            <input type="email" name="email" form="cadastro" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="3" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required>
+            <label for="senha" form="cadastro" id="senha">Senha</label>
+            <input type="password" name="senha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="4" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="senha" required>
+            <label for="confirmaSenha" form="cadastro" id="confirma-senha">Confirmação de Senha</label>
+            <input type="password" name="confirmaSenha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="5" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="confirma-senha" required>
+        </fieldset>
+        <fieldset form="cadastro" name="campos-botao" class="form__botoes">
+            <button type="submit" form="cadastrar" tabindex="6">Cadastrar</button>
+        </fieldset>
+    </form>
+</section>
