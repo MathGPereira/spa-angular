@@ -1,1 +1,17 @@
 <app-auxiliar-cabecalho></app-auxiliar-cabecalho>
+<section class="principal" role="main">
+    <form action="#" method="POST" autocomplete="on" id="concluir">
+        <fieldset form="concluir" name="campos-trocar-senha" class="form__agrupamento">
+            <legend>Trocar Senha</legend>
+            <label for="email" form="concluir" accesskey="e" id="email">E-mail</label>
+            <input type="email" name="email" form="concluir" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required>
+            <label for="senha" form="concluir" accesskey="s" id="nova-senha">Nova senha</label>
+            <input type="password" name="senha" form="concluir" inputmode="verbatin" autocorrect="on" placeholder="Nova senha" tabindex="2" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="nova-senha" required>
+            <label for="confirmaSenha" form="concluir" accesskey="n" id="confirma-senha">Confirmação de Senha</label>
+            <input type="password" name="confirmaSenha" form="concluir" inputmode="verbatin" autocorrect="on" placeholder="Nova senha" tabindex="3" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="confirma-senha" required>
+        </fieldset>
+        <fieldset form="concluir" name="campos-botao" class="form__botoes">
+            <button type="submit" form="concluir" tabindex="4">Trocar</button>
+        </fieldset>
+    </form>
+</section>

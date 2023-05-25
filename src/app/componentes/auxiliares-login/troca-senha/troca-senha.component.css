@@ -1,0 +1,3 @@
+.form__agrupamento label[for="senha"], .form__agrupamento label[for="confirmaSenha"] {
+    margin-top: 1.5em;
+}

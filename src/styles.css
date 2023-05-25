@@ -4,10 +4,82 @@
 :root {
     --cor-principal: #701414;
     --cor-secundaria: #ED2728;
+    --cor-fundo: #F4F2FF;
+    --cor-input: #F3F3F3;
+    --cor-branco: #FFFFFF;
 
     --font-principal: 'Roboto', sans-serif;
 }
 
 body {
+    background-color: var(--cor-fundo);
     font-family: var(--font-principal);
+}
+
+.principal {
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.principal form {
+    background-color: var(--cor-branco);
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+}
+
+.form__agrupamento {
+    box-sizing: border-box;
+    border: none;
+    text-align: center;
+}
+
+.form__agrupamento legend {
+    color: var(--cor-secundaria);
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: .2em;
+}
+
+.form__agrupamento label {
+    color: var(--cor-principal);
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form__agrupamento input {
+    background-color: var(--cor-input);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    padding: 1em;
+    width: 90%;
+}
+
+.form__agrupamento input:focus {
+    outline: auto var(--cor-primaria);
+}
+
+.form__agrupamento input::placeholder {
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    display: block;
+}
+
+.form__botoes button[type="submit"] {
+    background-image: linear-gradient(to right, var(--cor-secundaria), var(--cor-principal));
+    border: none;
+    border-radius: 10px;
+    color: var(--cor-branco);
+    padding: 10px 2em;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1em auto 0;
 }

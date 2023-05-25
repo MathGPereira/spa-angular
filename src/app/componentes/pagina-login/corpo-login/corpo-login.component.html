@@ -1,16 +1,16 @@
 <section class="principal" role="main">
     <form action="" method="POST" autocomplete="on" id="login">
-        <fieldset form="login" class="form__agrupamento">
+        <fieldset form="login" name="campos-login" class="form__agrupamento">
             <legend>Login</legend>
-            <label for="email">E-mail</label>
-            <input type="email" name="email">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha">
+            <label for="email" form="login" accesskey="e" id="email">E-mail</label>
+            <input type="email" name="email" form="login" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required>
+            <label for="senha" form="login" accesskey="s" id="senha">Senha</label>
+            <input type="password" name="senha" form="login" inputmode="verbatim" autocorrect="off" placeholder="********" tabindex="2" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="senha" required>
         </fieldset>
-        <fieldset form="login" class="form__botoes">
-            <button type="button" id="trocar-senha" routerLink="/esqueciSenha">Esqueci minha senha</button>
-            <button type="submit" form="login" name="entrar" class="login__entrar">Entrar</button>
-            <button type="button" id="criar-conta" routerLink="/criaConta">Criar conta</button>
+        <fieldset form="login" name="campos-botao" class="form__botoes">
+            <button type="button" form="login" tabindex="3" id="trocar-senha" routerLink="/esqueciSenha">Esqueci minha senha</button>
+            <button type="submit" form="login" tabindex="4" name="entrar" class="login__entrar">Entrar</button>
+            <button type="button" form="login" tabindex="5" id="criar-conta" routerLink="/criaConta">Criar conta</button>
         </fieldset>
     </form>
 </section>
