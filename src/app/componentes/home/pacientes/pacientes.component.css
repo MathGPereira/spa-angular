@@ -1,0 +1,23 @@
+.principal {
+    overflow: scroll;
+}
+
+.principal__paciente {
+    padding: 1em;
+}
+
+button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: var(--cor-principal);
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button::before {
+    content: url("../../../../assets/imagens/icones/adiciona-paciente.png");
+    margin-right: 1em;
+}
