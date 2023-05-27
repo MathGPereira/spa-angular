@@ -1,0 +1,112 @@
+.principal {
+    height: calc(100vh - 11.2em);
+    overflow: scroll;
+}
+
+.principal__saudacoes {
+    color: #808080;
+    font-size: 14px;
+}
+.principal h1 {
+    color: var(--cor-principal);
+    font-size: 30px;
+    font-weight: 700;
+    margin: .5em 0;
+}
+
+.principal__consultas {
+    background-color: var(--cor-branco);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin-bottom: .5em;
+    padding: .3em 1em;
+    text-align: center;
+}
+
+.principal__consultas h2 {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.principal__consultas p {
+    border-left: 5px solid var(--cor-secundaria);
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 1em 0;
+    padding-left: .5em;
+    text-align: left;
+}
+
+.principal__consultas p span {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+strong {
+    font-weight: 700;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.principal__consultas button {
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.principal__consultas button:hover {
+    text-decoration: underline;
+}
+
+.principal__tarefas {
+    background-color: var(--cor-branco);
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: .3em 1em;
+    text-align: center;
+}
+
+.principal__tarefas h2 {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.principal__tarefas form {
+    box-sizing: border-box;
+    text-align: left;
+    display: grid;
+    grid-template: auto / 1fr;
+    margin: 1em 0;
+}
+
+.checkbox {
+    display: inline-block;
+}
+
+.formulario__rotulo {
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+i {
+    visibility: hidden;
+}
+
+.principal__tarefas button {
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.principal__tarefas button:hover {
+    text-decoration: underline;
+}
