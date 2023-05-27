@@ -9,6 +9,11 @@ import { CriaContaComponent } from './componentes/auxiliares-login/cria-conta/cr
 import { TrocaSenhaComponent } from './componentes/auxiliares-login/troca-senha/troca-senha.component';
 import { LoginComponent } from './componentes/pagina-login/login/login.component';
 import { AuxiliarCabecalhoComponent } from './componentes/auxiliares-login/auxiliar-cabecalho/auxiliar-cabecalho.component';
+import { HomeComponent } from './componentes/home/home/home.component';
+import { TarefasComponent } from './componentes/home/tarefas/tarefas.component';
+import { PacientesComponent } from './componentes/home/pacientes/pacientes.component';
+import { HomeCabecalhoComponent } from './componentes/home/home-cabecalho/home-cabecalho.component';
+import { HomeRodapeComponent } from './componentes/home/home-rodape/home-rodape.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { AuxiliarCabecalhoComponent } from './componentes/auxiliares-login/auxil
     CriaContaComponent,
     TrocaSenhaComponent,
     LoginComponent,
-    AuxiliarCabecalhoComponent
+    AuxiliarCabecalhoComponent,
+    HomeComponent,
+    TarefasComponent,
+    PacientesComponent,
+    HomeCabecalhoComponent,
+    HomeRodapeComponent
   ],
   imports: [
     BrowserModule,
