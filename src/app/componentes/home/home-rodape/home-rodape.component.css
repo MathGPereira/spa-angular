@@ -1,0 +1,34 @@
+.rodape {
+    background-image: linear-gradient(to right, var(--cor-secundaria) 10%, var(--cor-principal));
+}
+
+.rodape div {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+i {
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+}
+
+
+button[name="home"] i {
+    background: url("../../../../assets/imagens/icones/botao-home.png") no-repeat center center / cover;
+}
+
+button[name="pacientes"] i {
+    background: url("../../../../assets/imagens/icones/paciente.png") no-repeat center center / cover;
+}
+
+button[name="tarefas"] i {
+    background: url("../../../../assets/imagens/icones/tarefas.png") no-repeat center center / cover;
+}
