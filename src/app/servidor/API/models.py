@@ -8,6 +8,7 @@ class Usuario(database.Model):
     email = database.Column(database.String, nullable=False, unique=True)
     senha = database.Column(database.String, nullable=False)
     foto_perfil = database.Column(database.String, nullable=False, default="default_usuario.jpg")
+    usuario = database.relationship("Cliente", backref="medico", lazy=True)
 
 
 class Cliente(database.Model):
@@ -19,3 +20,4 @@ class Cliente(database.Model):
     idade = database.Column(database.Integer, nullable=False)
     sexo = database.Column(database.String, nullable=False)
     tratamento = database.Column(database.Text, nullable=False)
+    id_usuario = database.Column(database.Integer, database.ForeignKey("usuario.id"), nullable=False)
