@@ -1,5 +1,4 @@
 .principal {
-    height: calc(100vh - 11.2em);
     overflow: scroll;
 }
 

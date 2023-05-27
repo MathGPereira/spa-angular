@@ -14,6 +14,12 @@
 body {
     background-color: var(--cor-fundo);
     font-family: var(--font-principal);
+    height: 100vh;
+}
+
+main {
+    box-sizing: border-box;
+    height: calc(100vh - 180px);
 }
 
 .principal {
