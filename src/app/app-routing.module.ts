@@ -5,6 +5,8 @@ import { CriaContaComponent } from './componentes/auxiliares-login/cria-conta/cr
 import { LoginComponent } from './componentes/pagina-login/login/login.component';
 import { HomeCabecalhoComponent } from './componentes/home/home-cabecalho/home-cabecalho.component';
 import { HomeComponent } from './componentes/home/home/home.component';
+import { PacientesComponent } from './componentes/home/pacientes/pacientes.component';
+import { TarefasComponent } from './componentes/home/tarefas/tarefas.component';
 
 const routes: Routes = [
     {
@@ -27,6 +29,14 @@ const routes: Routes = [
     {
         path: "home",
         component: HomeComponent
+    },
+    {
+        path: "pacientes",
+        component: PacientesComponent
+    },
+    {
+        path: "tarefas",
+        component: TarefasComponent
     }
 ];
 
