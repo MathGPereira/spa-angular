@@ -1,21 +1,49 @@
 <app-auxiliar-cabecalho></app-auxiliar-cabecalho>
 <section class="principal" role="main">
-    <form action="#" method="POST" autocomplete="on" id="cadastro">
+    <form action="#" method="POST" autocomplete="on" id="cadastro" #f="ngForm" (ngSubmit)="cadastrar(f)">
         <fieldset form="cadastro" name="campos-cadastro" class="form__agrupamento">
             <legend>Cadastro</legend>
-            <label for="nome" form="cadastro" accesskey="n" id="nome">Nome</label>
-            <input type="text" name="nome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Nome" tabindex="1" minlength="3" aria-labelledby="nome" required>
-            <label for="sobrenome" form="cadastro" accesskey="s" id="sobrenome">Sobrenome</label>
-            <input type="text" name="sobrenome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Sobrenome" tabindex="2" minlength="2" aria-labelledby="sobrenome" required>
-            <label for="email" form="cadastro" accesskey="e" id="email">E-mail</label>
-            <input type="email" name="email" form="cadastro" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="3" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required>
-            <label for="senha" form="cadastro" id="senha">Senha</label>
-            <input type="password" name="senha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="4" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="senha" required>
-            <label for="confirmaSenha" form="cadastro" id="confirma-senha">Confirmação de Senha</label>
-            <input type="password" name="confirmaSenha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="5" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="confirma-senha" required>
+            <div class="nome">
+                <label for="nome" form="cadastro" accesskey="n" id="nome">Nome</label>
+                <input type="text" name="nome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Nome" tabindex="1" minlength="3" aria-labelledby="nome" required ngModel>
+                <div *ngIf="(f.controls['nome']?.invalid && f.controls['nome']?.touched) || f.controls['nome']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['nome']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['nome']?.errors?.['minlength']" mensagem="O nome deve ter, no mínimo, 3 letras"></app-mensagens-erro>
+                </div>
+            </div>
+            <div class="sobrenome">
+                <label for="sobrenome" form="cadastro" accesskey="s" id="sobrenome">Sobrenome</label>
+                <input type="text" name="sobrenome" form="cadastro" inputmode="latin-name" autocorrect="on" autocapitalize="on" spellcheck="true" placeholder="Sobrenome" tabindex="2" minlength="2" aria-labelledby="sobrenome" required ngModel>
+                <div *ngIf="(f.controls['sobrenome']?.invalid && f.controls['sobrenome']?.touched) || f.controls['sobrenome']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['sobrenome']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['sobrenome']?.errors?.['minlength']" mensagem="O nome deve ter, no mínimo, 3 letras"></app-mensagens-erro>
+                </div>
+            </div>
+            <div class="email">
+                <label for="email" form="cadastro" accesskey="e" id="email">E-mail</label>
+                <input type="email" name="email" form="cadastro" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="3" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required ngModel>
+                <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="Você deve preencher um e-mail no formato exemplo@dominio.com"></app-mensagens-erro>
+                </div>
+            </div>
+            <div class="senha">
+                <label for="senha" form="cadastro" id="senha">Senha</label>
+                <input type="password" name="senha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="4" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" aria-labelledby="senha" required ngModel>
+                <div *ngIf="(f.controls['senha']?.invalid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['pattern']" mensagem="Sua senha deve conter ao menos um caractere especial, uma letra maiúscula e minúsculas e ao menos um número"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['minlength']" mensagem="Sua senha deve ter no mínimo 8 caracteres"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['maxlength']" mensagem="Sua senha deve ter no máximo 20 caracteres"></app-mensagens-erro>
+                </div>
+            </div>
+            <div class="confirmaSenha">
+                <label for="confirmaSenha" form="cadastro" id="confirma-senha">Confirmação de Senha</label>
+                <input type="password" name="confirmaSenha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="5" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="confirma-senha" required ngModel>
+            </div>
         </fieldset>
         <fieldset form="cadastro" name="campos-botao" class="form__botoes">
-            <button type="submit" form="cadastrar" tabindex="6">Cadastrar</button>
+            <button type="submit" form="cadastro" tabindex="6">Cadastrar</button>
         </fieldset>
     </form>
 </section>

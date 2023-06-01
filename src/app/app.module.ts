@@ -14,6 +14,8 @@ import { TarefasComponent } from './componentes/home/tarefas/tarefas.component';
 import { PacientesComponent } from './componentes/home/pacientes/pacientes.component';
 import { HomeCabecalhoComponent } from './componentes/home/home-cabecalho/home-cabecalho.component';
 import { HomeRodapeComponent } from './componentes/home/home-rodape/home-rodape.component';
+import { FormsModule } from '@angular/forms';
+import { MensagensErroComponent } from './componentes/mensagens-erro/mensagens-erro.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { HomeRodapeComponent } from './componentes/home/home-rodape/home-rodape.
     TarefasComponent,
     PacientesComponent,
     HomeCabecalhoComponent,
-    HomeRodapeComponent
+    HomeRodapeComponent,
+    MensagensErroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+.menssagem__erro {
+    color: var(--cor-secundaria);
+    font-size: 12px;
+}
+
+.ng-touched.ng-invalid:not(form) {
+    border: 1px solid var(--cor-secundaria);
+    color: var(--cor-principal);
+}
+
+.ng-touched.ng-invalid:not(form)::placeholder {
+    color: var(--cor-principal);
+}
