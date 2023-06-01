@@ -16,6 +16,7 @@ import { HomeCabecalhoComponent } from './componentes/home/home-cabecalho/home-c
 import { HomeRodapeComponent } from './componentes/home/home-rodape/home-rodape.component';
 import { FormsModule } from '@angular/forms';
 import { MensagensErroComponent } from './componentes/mensagens-erro/mensagens-erro.component';
+import { MesmaSenhaDirective } from './diretivas/mesma-senha.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MensagensErroComponent } from './componentes/mensagens-erro/mensagens-e
     PacientesComponent,
     HomeCabecalhoComponent,
     HomeRodapeComponent,
-    MensagensErroComponent
+    MensagensErroComponent,
+    MesmaSenhaDirective
   ],
   imports: [
     BrowserModule,
