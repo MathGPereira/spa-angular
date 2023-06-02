@@ -90,3 +90,12 @@ button {
     font-weight: 700;
     margin: 1em auto 0;
 }
+
+.ng-touched.ng-invalid:not(form) {
+    border: 1px solid var(--cor-secundaria);
+    color: var(--cor-principal);
+}
+
+.ng-touched.ng-invalid:not(form)::placeholder {
+    color: var(--cor-principal);
+}
