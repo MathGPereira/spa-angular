@@ -17,6 +17,6 @@ export class MesmaSenhaDirective implements Validator {
         const senha = <HTMLInputElement>document.querySelector("[data-senha]");
         const confirmaSenha = control.value
 
-        return senha.value !== confirmaSenha ? null : {"mesmaSenhaValidator": true}
+        return senha.value === confirmaSenha ? null : {"mesmaSenhaValidator": true}
     }
 }
