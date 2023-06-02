@@ -9,6 +9,6 @@ def api():
 
 @app.route("/cadastrar", methods=["GET", "POST"])
 def cadastrar():
-    print(request.headers)
+    print(request.data)
 
     return {"teste": "cadastro"}
