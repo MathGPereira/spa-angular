@@ -39,7 +39,7 @@
             </div>
             <div class="confirmaSenha">
                 <label for="confirmaSenha" form="cadastro" id="confirma-senha">Confirmação de Senha</label>
-                <input type="password" name="confirmaSenha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="5" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="confirma-senha" required ngModel mesmaSenhaValidator>
+                <input type="password" name="confirmaSenha" form="cadastro" inputmode="verbatin" autocorrect="on" placeholder="********" tabindex="5" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" aria-labelledby="confirma-senha" required ngModel mesmaSenhaValidator>
                 <div *ngIf="(f.controls['confirmaSenha']?.invalid && f.controls['confirmaSenha']?.touched) || f.controls['confirmaSenha']?.dirty">
                     <app-mensagens-erro *ngIf="f.controls['confirmaSenha']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
                     <app-mensagens-erro *ngIf="f.controls['confirmaSenha']?.errors?.['pattern']" mensagem="Sua senha deve conter ao menos um caractere especial, uma letra maiúscula e minúsculas e ao menos um número"></app-mensagens-erro>

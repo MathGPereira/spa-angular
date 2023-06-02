@@ -1,16 +1,30 @@
 <section class="principal" role="main">
-    <form action="" method="POST" autocomplete="on" id="login">
+    <form action="" method="POST" autocomplete="on" id="login" #f="ngForm" (ngSubmit)="logar(f)">
         <fieldset form="login" name="campos-login" class="form__agrupamento">
             <legend>Login</legend>
-            <label for="email" form="login" accesskey="e" id="email">E-mail</label>
-            <input type="email" name="email" form="login" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required>
-            <label for="senha" form="login" accesskey="s" id="senha">Senha</label>
-            <input type="password" name="senha" form="login" inputmode="verbatim" autocorrect="off" placeholder="********" tabindex="2" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$" aria-labelledby="senha" required>
+            <div class="email">
+                <label for="email" form="login" accesskey="e" id="email">E-mail</label>
+                <input type="email" name="email" form="login" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required ngModel>
+                <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="Você deve preencher um e-mail no formato exemplo@dominio.com"></app-mensagens-erro>
+                </div>
+            </div>
+            <div class="senha">
+                <label for="senha" form="login" accesskey="s" id="senha">Senha</label>
+                <input type="password" name="senha" form="login" inputmode="verbatim" autocorrect="off" placeholder="********" tabindex="2" minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" aria-labelledby="senha" required ngModel>
+                <div *ngIf="(f.controls['senha']?.invalid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['pattern']" mensagem="Sua senha deve conter ao menos um caractere especial, uma letra maiúscula e minúsculas e ao menos um número"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['minlength']" mensagem="Sua senha deve ter no mínimo 8 caracteres"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['senha']?.errors?.['maxlength']" mensagem="Sua senha deve ter no máximo 20 caracteres"></app-mensagens-erro>
+                </div>
+            </div>
         </fieldset>
         <fieldset form="login" name="campos-botao" class="form__botoes">
-            <button type="button" form="login" tabindex="3" id="trocar-senha" routerLink="/esqueciSenha">Esqueci minha senha</button>
-            <button type="submit" form="login" tabindex="4" name="entrar" class="login__entrar" routerLink="/home">Entrar</button>
-            <button type="button" form="login" tabindex="5" id="criar-conta" routerLink="/criaConta">Criar conta</button>
+            <button type="button" tabindex="3" id="trocar-senha" routerLink="/esqueciSenha">Esqueci minha senha</button>
+            <button type="submit" form="login" tabindex="4" name="entrar" class="login__entrar">Entrar</button>
+            <button type="button" tabindex="5" id="criar-conta" routerLink="/criaConta">Criar conta</button>
         </fieldset>
     </form>
 </section>
