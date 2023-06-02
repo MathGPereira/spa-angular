@@ -29,8 +29,8 @@ export class CriaContaComponent {
                 senha: senha.value
             }
 
-            this.service.cadastrarNoBancoDeDados(usuario);
-            this.route.navigate(["/login"]);
+            this.service.cadastrarNoBancoDeDados(usuario).subscribe();
+            //this.route.navigate(["/login"]);
         }
     }
 
