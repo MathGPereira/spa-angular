@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 
@@ -7,15 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './cria-conta.component.html',
   styleUrls: ['./cria-conta.component.css']
 })
-export class CriaContaComponent implements OnInit {
+export class CriaContaComponent {
 
-    constructor(private route: Router) {
-
-    }
-
-    ngOnInit(): void {
-
-    }
+    constructor(private route: Router) {}
 
     cadastrar(form: NgForm): void {
         if(form.valid) {
