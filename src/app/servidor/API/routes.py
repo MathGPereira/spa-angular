@@ -15,10 +15,15 @@ def cadastrar():
         return {"erro": "metodo invalido"}
 
     info_cadastro = json.loads(request.data.decode('utf-8'))
+
+    for chave in info_cadastro:
+        if chave == "":
+            return {"erro": "sao necessarios 4 parâmetros para o cadastro do usuario"}
+
     usuario = Usuario(
         nome=info_cadastro["nome"],
         sobrenome=info_cadastro["sobrenome"],
-        email=info_cadastro["email"],
+        email=bcrypt.generate_password_hash(info_cadastro["email"]),
         senha=bcrypt.generate_password_hash(info_cadastro["senha"])
     )
 
