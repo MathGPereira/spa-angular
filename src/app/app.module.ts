@@ -17,6 +17,7 @@ import { HomeRodapeComponent } from './componentes/home/home-rodape/home-rodape.
 import { FormsModule } from '@angular/forms';
 import { MensagensErroComponent } from './componentes/mensagens-erro/mensagens-erro.component';
 import { MesmaSenhaDirective } from './diretivas/mesma-senha.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MesmaSenhaDirective } from './diretivas/mesma-senha.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
