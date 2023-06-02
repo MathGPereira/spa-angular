@@ -2,13 +2,13 @@ from API import database
 
 
 class Usuario(database.Model):
-    id = database.Column(database.Integer, primary_key=True)
+    id = database.Column(database.Integer, primary_key=True, nullable=False, autoincrement=True)
     nome = database.Column(database.String, nullable=False)
     sobrenome = database.Column(database.String, nullable=False)
     email = database.Column(database.String, nullable=False, unique=True)
     senha = database.Column(database.String, nullable=False)
     foto_perfil = database.Column(database.String, nullable=False, default="default_usuario.jpg")
-    usuario = database.relationship("Cliente", backref="medico", lazy=True)
+    cliente = database.relationship("Cliente", backref="medico", lazy=True)
 
 
 class Cliente(database.Model):

@@ -1,5 +1,5 @@
 from flask import request
-from API import app, database, bcrypt
+from API import app, bcrypt, database
 from API.models import Usuario
 import json
 
@@ -29,5 +29,9 @@ def cadastrar():
 
     with app.app_context():
         database.session.add(usuario)
-        database.session.commit()
+        try:
+            database.session.commit()
+            print("Sem erro no commit")
+        except:
+            print("Erro no commit")
     return ""

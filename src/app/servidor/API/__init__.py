@@ -8,8 +8,12 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.urandom(32)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///usuarios.db"
 
-CORS(app)
 database = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+CORS(app)
+
+# with app.app_context():
+#     database.drop_all()
+#     database.create_all()
 
 from API import routes
