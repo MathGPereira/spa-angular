@@ -5,10 +5,10 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
 app.config["SECRET_KEY"] = os.urandom(32)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///usuarios.db"
 
+CORS(app)
 database = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
