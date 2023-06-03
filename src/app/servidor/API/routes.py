@@ -6,7 +6,7 @@ import sys
 
 
 @app.route("/", methods=["POST"])
-def get_email():
+def get_email_senha():
     with app.app_context():
         for usuario in Usuario.query.all():
             if usuario.email == request.data.decode(sys.getdefaultencoding()):

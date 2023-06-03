@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { TrocaSenhaComponent } from './componentes/auxiliares-login/troca-senha/troca-senha.component';
 import { CriaContaComponent } from './componentes/auxiliares-login/cria-conta/cria-conta.component';
 import { LoginComponent } from './componentes/pagina-login/login/login.component';
-import { HomeCabecalhoComponent } from './componentes/home/home-cabecalho/home-cabecalho.component';
 import { HomeComponent } from './componentes/home/home/home.component';
 import { PacientesComponent } from './componentes/home/pacientes/pacientes.component';
 import { TarefasComponent } from './componentes/home/tarefas/tarefas.component';

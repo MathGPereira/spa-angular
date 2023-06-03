@@ -23,5 +23,4 @@ export class ValidaEmailDirective implements AsyncValidator {
         (resultado: any) => resultado.erro ? {"validaEmail": true}: null
     ));
   }
-
 }
