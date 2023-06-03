@@ -9,9 +9,28 @@ def api():
     return {"nome": "nome"}
 
 
+@app.route("/trocarSenha", methods=["PUT"])
+def trocar_senha():
+    if request.method in "GET POST PATCH DELETE":
+        return {"erro": "metodo invalido"}
+
+    info_alteracao = json.loads(request.data.decode("utf-8"))
+
+    for chave in info_alteracao:
+        if chave == "":
+            return {"erro": "sao necessarios 3 parâmetros para a atualizacao da senha"}
+
+    with app.app_context():
+        usuario_troca_senha = Usuario.query.filter_by(email=info_alteracao["email"]).first()
+        if usuario_troca_senha.email == info_alteracao["email"]:
+            print(Usuario.query.first())
+
+    return ""
+
+
 @app.route("/cadastrar", methods=["POST"])
 def cadastrar():
-    if request.method in "GETPUTPATCHDELETE":
+    if request.method in "GET PUT PATCH DELETE":
         return {"erro": "metodo invalido"}
 
     info_cadastro = json.loads(request.data.decode('utf-8'))
@@ -23,7 +42,7 @@ def cadastrar():
     usuario = Usuario(
         nome=info_cadastro["nome"],
         sobrenome=info_cadastro["sobrenome"],
-        email=bcrypt.generate_password_hash(info_cadastro["email"]),
+        email=info_cadastro["email"],
         senha=bcrypt.generate_password_hash(info_cadastro["senha"])
     )
 
@@ -31,7 +50,6 @@ def cadastrar():
         database.session.add(usuario)
         try:
             database.session.commit()
-            print("Sem erro no commit")
         except:
-            print("Erro no commit")
+            raise Exception("Erro no método commit do banco de dados")
     return ""

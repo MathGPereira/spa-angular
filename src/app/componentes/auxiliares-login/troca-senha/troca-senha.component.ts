@@ -1,6 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicoService } from 'src/app/service/servico.service';
 
 @Component({
   selector: 'app-troca-senha',
@@ -9,11 +10,22 @@ import { Router } from '@angular/router';
 })
 export class TrocaSenhaComponent {
 
-    constructor(private route: Router) {}
+    constructor(
+        private route: Router,
+        private service: ServicoService
+    ) {}
 
     trocaSenha(form: NgForm): void {
         if(form.valid) {
-            this.route.navigate(["./login"]);
+            const email = document.querySelector("input[name='email']") as HTMLInputElement;
+            const senha = document.querySelector("input[name='senha']") as HTMLInputElement;
+            const info = {
+                email: btoa(email.value),
+                senha: btoa(senha.value)
+            }
+
+            this.service.trocarSenhaNoBancoDeDados(info).subscribe();
+            //this.route.navigate(["./login"]);
         }
     }
 }

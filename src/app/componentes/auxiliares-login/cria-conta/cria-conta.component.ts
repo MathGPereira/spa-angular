@@ -25,12 +25,12 @@ export class CriaContaComponent {
             const usuario: Usuario = {
                 nome: nome.value,
                 sobrenome: sobrenome.value,
-                email: email.value,
-                senha: senha.value
+                email: btoa(email.value),
+                senha: btoa(senha.value)
             }
 
             this.service.cadastrarNoBancoDeDados(usuario).subscribe();
-            //this.route.navigate(["/login"]);
+            this.route.navigate(["/login"]);
         }
     }
 
