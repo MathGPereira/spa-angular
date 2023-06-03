@@ -5,19 +5,13 @@ import json
 import sys
 
 
-@app.route("/", methods=["GET"])
-def get_api():
-    json = []
-
+@app.route("/", methods=["POST"])
+def get_email():
     with app.app_context():
         for usuario in Usuario.query.all():
-            json.append({
-                "nome": usuario.nome,
-                "sobrenome": usuario.sobrenome,
-                "email": usuario.email,
-                "senha": usuario.senha.decode(sys.getdefaultencoding())
-            })
-    return json
+            if usuario.email == request.data.decode(sys.getdefaultencoding()):
+                return {"erro": False}
+    return {"erro": True}
 
 
 @app.route("/trocarSenha", methods=["PUT"])

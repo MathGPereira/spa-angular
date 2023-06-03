@@ -22,7 +22,7 @@ export class ServicoService {
         return this.http.put<object>(this.urlAPITrocarSenha, info);
     }
 
-    pegaInformacoesNoBancoDeDados(email: any): Observable<any> {
-        return this.http.get<any>(this.urlAPIGet, email);
+    pegaInformacoesNoBancoDeDados(info: any): Observable<object> {
+        return this.http.post<object>(this.urlAPIGet, info);
     }
 }
