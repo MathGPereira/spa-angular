@@ -23,7 +23,8 @@ def trocar_senha():
     with app.app_context():
         usuario_troca_senha = Usuario.query.filter_by(email=info_alteracao["email"]).first()
         if usuario_troca_senha.email == info_alteracao["email"]:
-            print(Usuario.query.first())
+            usuario_troca_senha.senha = bcrypt.generate_password_hash(info_alteracao["senha"])
+            database.session.commit()
 
     return ""
 
