@@ -2,11 +2,22 @@ from flask import request
 from API import app, bcrypt, database
 from API.models import Usuario
 import json
+import sys
 
 
-@app.route("/", methods=["GET", "POST"])
-def api():
-    return {"nome": "nome"}
+@app.route("/", methods=["GET"])
+def get_api():
+    json = []
+
+    with app.app_context():
+        for usuario in Usuario.query.all():
+            json.append({
+                "nome": usuario.nome,
+                "sobrenome": usuario.sobrenome,
+                "email": usuario.email,
+                "senha": usuario.senha.decode(sys.getdefaultencoding())
+            })
+    return json
 
 
 @app.route("/trocarSenha", methods=["PUT"])

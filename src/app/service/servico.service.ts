@@ -10,6 +10,7 @@ export class ServicoService {
 
     private readonly urlAPICadastrar = "http://127.0.0.1:5000/cadastrar";
     private readonly urlAPITrocarSenha = "http://127.0.0.1:5000/trocarSenha";
+    private readonly urlAPIGet = "http://127.0.0.1:5000";
 
     constructor(private http: HttpClient) { }
 
@@ -19,5 +20,9 @@ export class ServicoService {
 
     trocarSenhaNoBancoDeDados(info: object): Observable<object> {
         return this.http.put<object>(this.urlAPITrocarSenha, info);
+    }
+
+    pegaInformacoesNoBancoDeDados(email: any): Observable<any> {
+        return this.http.get<any>(this.urlAPIGet, email);
     }
 }

@@ -25,7 +25,7 @@ export class TrocaSenhaComponent {
             }
 
             this.service.trocarSenhaNoBancoDeDados(info).subscribe();
-            //this.route.navigate(["./login"]);
+            this.route.navigate(["./login"]);
         }
     }
 }

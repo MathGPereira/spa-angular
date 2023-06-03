@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MensagensErroComponent } from './componentes/mensagens-erro/mensagens-erro.component';
 import { MesmaSenhaDirective } from './diretivas/mesma-senha.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { ValidaEmailDirective } from './diretivas/valida-email.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeCabecalhoComponent,
     HomeRodapeComponent,
     MensagensErroComponent,
-    MesmaSenhaDirective
+    MesmaSenhaDirective,
+    ValidaEmailDirective
   ],
   imports: [
     BrowserModule,

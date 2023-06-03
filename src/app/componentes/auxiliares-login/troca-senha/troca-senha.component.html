@@ -5,10 +5,11 @@
             <legend>Trocar Senha</legend>
             <div class="email">
                 <label for="email" form="concluir" accesskey="e" id="email">E-mail</label>
-                <input type="email" name="email" form="concluir" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required ngModel>
+                <input type="email" name="email" form="concluir" inputmode="verbatim" autocorrect="on" placeholder="E-mail" tabindex="1" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" aria-labelledby="email" required ngModel validaEmail>
                 <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
                     <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Este campo deve ser preenchido"></app-mensagens-erro>
                     <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="Você deve preencher um e-mail no formato exemplo@dominio.com"></app-mensagens-erro>
+                    <app-mensagens-erro *ngIf="f.controls['email']?.errors?.['validaEmail']" mensagem="Este e-mail não existe"></app-mensagens-erro>
                 </div>
             </div>
             <div class="senha">
