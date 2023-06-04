@@ -1,6 +1,7 @@
 # Agenda De Pacientes
 
 ## Sobre
+Um projeto feito com a intenção de melhorar as habilidades e conhecimentos de AJAX com Angular, validação de formulários, componentização, criação e rotas, intefaces SPA e muito mais.
 
 ## Sumário
 
@@ -17,5 +18,3 @@
 
 ## Contato
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheuspereiradevfront/)
-
-## Configurações iniciais

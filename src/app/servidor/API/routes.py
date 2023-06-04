@@ -15,6 +15,15 @@ def get_email():
     return {"erro": True}
 
 
+@app.route("/senha", methods=["POST"])
+def get_senha():
+    with app.app_context():
+        for usuario in Usuario.query.all():
+            if usuario.email == request.data.decode(sys.getdefaultencoding()):
+                return {"erro": False}
+    return {"erro": True}
+
+
 @app.route("/validaLogin", methods=["POST"])
 def validaLogin():
     info = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
