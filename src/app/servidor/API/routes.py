@@ -1,17 +1,30 @@
-from flask import request
 from API import app, bcrypt, database
 from API.models import Usuario
+from flask import request
 import json
 import sys
+import ast
 
 
 @app.route("/", methods=["POST"])
-def get_email_senha():
+def get_email():
     with app.app_context():
         for usuario in Usuario.query.all():
             if usuario.email == request.data.decode(sys.getdefaultencoding()):
                 return {"erro": False}
     return {"erro": True}
+
+
+@app.route("/validaLogin", methods=["POST"])
+def validaLogin():
+    info = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
+
+    with app.app_context():
+        usuario = Usuario.query.filter_by(email=info["email"]).first()
+        if usuario.email == info["email"] and bcrypt.check_password_hash(usuario.senha, info["senha"]):
+            return {"status": True}
+
+    return {"status": False}
 
 
 @app.route("/trocarSenha", methods=["PUT"])

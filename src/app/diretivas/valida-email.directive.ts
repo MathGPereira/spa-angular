@@ -19,7 +19,7 @@ export class ValidaEmailDirective implements AsyncValidator {
   validate(control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     const email: string = btoa(control.value);
 
-    return this.service.pegaInformacoesNoBancoDeDados(email).pipe(map(
+    return this.service.pegaEmailNoBancoDeDados(email).pipe(map(
         (resultado: any) => resultado.erro ? {"validaEmail": true}: null
     ));
   }

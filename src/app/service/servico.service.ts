@@ -11,6 +11,7 @@ export class ServicoService {
     private readonly urlAPICadastrar = "http://127.0.0.1:5000/cadastrar";
     private readonly urlAPITrocarSenha = "http://127.0.0.1:5000/trocarSenha";
     private readonly urlAPIGet = "http://127.0.0.1:5000";
+    private readonly urlAPISenha = "http://127.0.0.1:5000/validaLogin";
 
     constructor(private http: HttpClient) { }
 
@@ -22,7 +23,11 @@ export class ServicoService {
         return this.http.put<object>(this.urlAPITrocarSenha, info);
     }
 
-    pegaInformacoesNoBancoDeDados(info: any): Observable<object> {
-        return this.http.post<object>(this.urlAPIGet, info);
+    pegaEmailNoBancoDeDados(email: any): Observable<object> {
+        return this.http.post<object>(this.urlAPIGet, email);
+    }
+
+    validaLogin(info: object): Observable<object> {
+        return this.http.post<object>(this.urlAPISenha, info);
     }
 }
